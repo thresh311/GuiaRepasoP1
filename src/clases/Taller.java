@@ -38,10 +38,10 @@ public class Taller extends Capacitacion {
 
 
 	@Override
-	public boolean inscribir(Alumno alumno) throws TallerCompletoException {
+	public void inscribir(Alumno alumno) throws TallerCompletoException {
 		if(cantInscriptos == cupoMaximo) throw new TallerCompletoException();
 		cantInscriptos++;
-		return true;
+		
 	}
 
 

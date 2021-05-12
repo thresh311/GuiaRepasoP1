@@ -19,7 +19,7 @@ public class Empleado {
 	}
 	
 	public double calcularCostos() {
-		return capacitaciones.stream().map(e -> e.obtenerCosto()).reduce(0.0, (acum,e) -> acum+e);
+		return capacitaciones.stream().map(e -> e.obtenerCosto()).reduce(0d, (acum,e) -> acum+e);
 	}
 	
 	public double calcularPromedioCapacitaciones() {

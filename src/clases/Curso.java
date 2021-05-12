@@ -48,9 +48,9 @@ public class Curso extends Capacitacion {
 	}
 
 	@Override
-	public boolean inscribir(Alumno alumno) throws CreditosInsuficientesException {
+	public void inscribir(Alumno alumno) throws CreditosInsuficientesException {
 		if(alumno.creditosObtenidos() < creditosReq) throw new CreditosInsuficientesException();
-		return true;
+		
 	}
 
 	@Override

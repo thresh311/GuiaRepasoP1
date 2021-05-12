@@ -20,9 +20,9 @@ public class Alumno {
 	
 	public void inscribir(Capacitacion c) {
 		try {
-			if(c.inscribir(this)) {
-				enCurso.add(c);
-			}
+			c.inscribir(this);
+			enCurso.add(c);
+			
 		} catch (CreditosInsuficientesException | TallerCompletoException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e.getMessage());

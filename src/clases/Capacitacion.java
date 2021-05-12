@@ -17,7 +17,7 @@ public abstract class Capacitacion {
 	
 	public abstract Integer getCreditosRequeridos();
 
-	public abstract boolean inscribir(Alumno alumno) throws CreditosInsuficientesException, TallerCompletoException;
+	public abstract void inscribir(Alumno alumno) throws CreditosInsuficientesException, TallerCompletoException;
 	
 	public abstract void aprobar(Alumno alumno);
 
