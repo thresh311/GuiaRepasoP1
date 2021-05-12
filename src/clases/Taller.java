@@ -1,5 +1,7 @@
 package clases;
 
+import excepciones.TallerCompletoException;
+
 public class Taller extends Capacitacion {
 
 	public int duracion;
@@ -32,6 +34,20 @@ public class Taller extends Capacitacion {
 	@Override
 	public Integer getCreditosRequeridos() {
 		return -1;
+	}
+
+
+	@Override
+	public boolean inscribir(Alumno alumno) throws TallerCompletoException {
+		if(cantInscriptos == cupoMaximo) throw new TallerCompletoException();
+		cantInscriptos++;
+		return true;
+	}
+
+
+	@Override
+	public void aprobar(Alumno alumno) {
+		cantInscriptos--;
 	}
 	
 	

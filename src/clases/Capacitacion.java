@@ -1,6 +1,8 @@
 package clases;
 
 import enumeraciones.Tema;
+import excepciones.CreditosInsuficientesException;
+import excepciones.TallerCompletoException;
 
 public abstract class Capacitacion {
 
@@ -14,5 +16,9 @@ public abstract class Capacitacion {
 	public abstract Double obtenerCosto();
 	
 	public abstract Integer getCreditosRequeridos();
+
+	public abstract boolean inscribir(Alumno alumno) throws CreditosInsuficientesException, TallerCompletoException;
 	
+	public abstract void aprobar(Alumno alumno);
+
 }

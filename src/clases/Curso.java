@@ -2,6 +2,8 @@ package clases;
 
 import java.util.ArrayList;
 
+import excepciones.CreditosInsuficientesException;
+
 public class Curso extends Capacitacion {
 
 	protected Docente docente;
@@ -43,6 +45,18 @@ public class Curso extends Capacitacion {
 	@Override
 	public Integer getCreditosRequeridos() {
 		return this.creditosReq;
+	}
+
+	@Override
+	public boolean inscribir(Alumno alumno) throws CreditosInsuficientesException {
+		if(alumno.creditosObtenidos() < creditosReq) throw new CreditosInsuficientesException();
+		return true;
+	}
+
+	@Override
+	public void aprobar(Alumno alumno) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	
